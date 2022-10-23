@@ -28,6 +28,7 @@ jobs:
     - name: Copy folder content recursively to remote
       uses: garygrossgarten/github-action-scp@release
       with:
+        rmRemote: true
         local: /home/runner/work/NaClnikOnline/NaClnikOnline/Main/bin/Release/net6.0/publish/
         remote: /scp/directory
         host: ${{ secrets.HOST }}
