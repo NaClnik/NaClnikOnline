@@ -24,12 +24,12 @@ jobs:
     - name: Test      
       run: dotnet test
     - name: Publish
-      run: dotnet publish Main/Main.csproj
+      run: dotnet publish Main/Main.csproj --configuration Release
     - name: Copy folder content recursively to remote
       uses: garygrossgarten/github-action-scp@release
       with:
         rmRemote: true
-        local: /home/runner/work/NaClnikOnline/NaClnikOnline/Main/bin/Debug/net6.0/publish/
+        local: /home/runner/work/NaClnikOnline/NaClnikOnline/Main/bin/Release/net6.0/publish/
         remote: /var/www/www-root/data/www/naclnik.online/
         host: ${{ secrets.HOST }}
         username: ${{ secrets.SSH_USER }}
