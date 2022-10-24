@@ -24,7 +24,7 @@ jobs:
     - name: Test      
       run: dotnet test
     - name: Publish
-      run: dotnet publish Main/Main.csproj --configuration Release
+      run: dotnet publish Main/Main.csproj
     - name: Copy folder content recursively to remote
       uses: garygrossgarten/github-action-scp@release
       with:

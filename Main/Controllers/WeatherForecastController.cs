@@ -9,7 +9,7 @@ public class WeatherForecastController : ControllerBase
 {
     private readonly ITelegramBotClient _telegramBotClient;
     
-    public WeatherForecastController(ITelegramBotClient telegramBotClient)
+    public WeatherForecastController(ITelegramBotClient telegramBotClient, ConfigurationManager configurationManager)
     {
         _telegramBotClient = telegramBotClient;
     }
