@@ -39,6 +39,6 @@ public class WeatherForecastController : ControllerBase
     [HttpGet]
     public ActionResult<string> Sasa()
     {
-        return "Я иду кушать";
+        return "Остановись!";
     }
 }
