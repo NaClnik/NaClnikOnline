@@ -30,7 +30,7 @@ jobs:
       with:
         rmRemote: true
         local: /home/runner/work/NaClnikOnline/NaClnikOnline/Main/bin/Release/net6.0/publish/
-        remote: /scp/directory
+        remote: /var/www/www-root/data/www/naclnik.online/
         host: ${{ secrets.HOST }}
         username: ${{ secrets.SSH_USER }}
         password: ${{ secrets.PASSWORD }}
