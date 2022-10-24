@@ -34,3 +34,13 @@ jobs:
         host: ${{ secrets.HOST }}
         username: ${{ secrets.SSH_USER }}
         password: ${{ secrets.PASSWORD }}
+    - name: Restart services
+      uses: appleboy/ssh-action@master
+      with:
+        host: ${{ secrets.HOST }}
+        username: ${{ secrets.SSH_USER }}
+        password: ${{ secrets.PASSWORD }}
+        port: 22
+        script: |
+          systemctl disable kestrel-naclnik-online-watcher.service
+          systemctl enable kestrel-naclnik-online-watcher.service && systemctl start kestrel-naclnik-online-watcher.service
