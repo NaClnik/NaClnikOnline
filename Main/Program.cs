@@ -1,15 +1,21 @@
+using Main.Extensions.DependencyInjection;
+using Main.Utils;
 using Microsoft.AspNetCore.HttpOverrides;
+using Microsoft.AspNetCore.Mvc.ApplicationModels;
 using Telegram.Bot;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
-builder.Services.AddControllers();
+builder.Services.AddControllers(options =>
+{
+    options.Conventions.Add(new RouteTokenTransformerConvention(new KebabCaseParameterTransformer()));
+});
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-builder.Services.AddTransient<ITelegramBotClient, TelegramBotClient>(serviceProvider => new TelegramBotClient(builder.Configuration["TelegramToken"]));
+builder.Services.AddTelegramBot(builder.Configuration["TelegramToken"]);
 
 var app = builder.Build();
 
@@ -28,7 +34,6 @@ app.UseForwardedHeaders(new ForwardedHeadersOptions
 });
 
 app.UseAuthorization();
-
 
 app.MapControllers();
 
