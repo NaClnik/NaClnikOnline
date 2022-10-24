@@ -14,6 +14,7 @@ public class TelegramController : ControllerBase
     public TelegramController(ITelegramBotClient telegramBotClient)
     {
         _telegramBotClient = telegramBotClient;
+        
     }
     
     [HttpPost]
