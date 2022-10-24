@@ -41,4 +41,10 @@ public class WeatherForecastController : ControllerBase
     {
         return "А я нет";
     }
+    
+    [HttpGet]
+    public ActionResult<string> Das()
+    {
+        return "Я плачу";
+    }
 }
