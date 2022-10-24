@@ -33,7 +33,7 @@ public class WeatherForecastController : ControllerBase
     [HttpGet]
     public ActionResult<string> Okay()
     {
-        return "Я иду кушать";
+        return "Это не шутка";
     }
     
     [HttpGet]
