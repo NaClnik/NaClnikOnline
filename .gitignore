@@ -2,6 +2,8 @@
 
 Main/bin
 Main/obj
+Main/appsettings.json
+Main/appsettings.Development.json
 
 Test/bin
 Test/obj

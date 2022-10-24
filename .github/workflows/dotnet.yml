@@ -42,5 +42,6 @@ jobs:
         password: ${{ secrets.PASSWORD }}
         port: 22
         script: |
+          cp /var/www/www-root/data/environment/naclnik-online-appsetting.json /var/www/www-root/data/www/naclnik.online/appsettings.json
           systemctl disable kestrel-naclnik-online-watcher.service
           systemctl enable kestrel-naclnik-online-watcher.service && systemctl start kestrel-naclnik-online-watcher.service

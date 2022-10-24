@@ -17,7 +17,6 @@ public class WeatherForecastController : ControllerBase
     [HttpGet]
     public ActionResult<string> Okay()
     {
-        
         return "Ты гуль ахахахах вфвфы";
     }
     
