@@ -14,10 +14,10 @@ public class WeatherForecastController : ControllerBase
         _telegramBotClient = telegramBotClient;
     }
 
-    [HttpGet]
+    [HttpPost]
     public ActionResult<string> Okay()
     {
-        return "Ты гуль ахахахах вфвфы";
+        return Request.Body.ToString();
     }
     
     [HttpGet]
